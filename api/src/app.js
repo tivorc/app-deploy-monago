@@ -11,7 +11,7 @@ app.get("/api/products", (req, res) => {
   const response = {
     ...req.headers,
     ip: req.ip,
-    ips: req.ips,
+    remoteAddress: req.socket.remoteAddress,
     reqHost: req.hostname,
   };
   res.json(response);
