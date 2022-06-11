@@ -9,18 +9,10 @@ app.get("/", (_, res) => {
 
 app.get("/api/products", (req, res) => {
   const response = {
-    info: {
-      ...req.headers,
-      ip: req.ip,
-      reqHost: req.hostname,
-    },
-    products: [
-      {
-        id: 1,
-        name: "LG OLED TV 45",
-        price: 649.99
-      },
-    ],
+    ...req.headers,
+    ip: req.ip,
+    ips: req.ips,
+    reqHost: req.hostname,
   };
   res.json(response);
 });
