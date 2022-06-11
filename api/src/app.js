@@ -18,6 +18,7 @@ app.get("/api/products", (req, res) => {
       {
         id: 1,
         name: "LG OLED TV 45",
+        price: 649.99
       },
     ],
   };
