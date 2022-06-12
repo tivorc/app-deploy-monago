@@ -26,4 +26,4 @@ jobs:
           app-name: 'monago-node'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F32B01FD7154549A6EE37090DB78E37 }}
-          package: ./src
+          package: ./api
