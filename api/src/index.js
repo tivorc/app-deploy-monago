@@ -1,11 +1,20 @@
-const http = require('http');
+const express = require("express");
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 
-const requestListener = function (_, res) {
-  res.writeHead(200);
-  res.end('Hello, World!');
-}
+app.get("/", (_, res) => {
+  res.json({ message: "Hello monago" });
+});
 
-const server = http.createServer(requestListener);
-server.listen(PORT);
+app.get("/api/products", (req, res) => {
+  const response = {
+    ...req.headers,
+    ip: req.ip,
+    remoteAddress: req.socket.remoteAddress,
+    reqHost: req.hostname,
+  };
+  res.json(response);
+});
+
+app.listen(PORT);
